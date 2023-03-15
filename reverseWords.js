@@ -5,9 +5,9 @@ const readline = require('readline');
 
 // Scrivi una funzione che prenda in input una stringa di parole separate da spazi e restituisca una nuova stringa in cui le parole sono invertite rispetto alla loro posizione originale.
 function reverseWords(str) {
-
-    // SCRIVI QUI IL TUO CODICE
-    
+    let words = str.split(" ");
+    words = words.reverse();
+    return words.join(" ");
 }
 
   
@@ -23,7 +23,7 @@ if (process.argv.length > 2) {
       input: process.stdin,
       output: process.stdout
     });
-    rl.question('Inserisci la stringa da convertire in codice Morse: ', (inputStr) => {
+    rl.question('Inserisci la stringa da invertire: ', (inputStr) => {
       let outputStr = reverseWords(inputStr);
       console.log(outputStr);
       rl.close();

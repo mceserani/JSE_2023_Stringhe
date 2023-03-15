@@ -6,9 +6,11 @@ const readline = require('readline');
 // Programma che scambia la prima e l'ultima lettera di ogni parola in una stringa di input
 
 function swapFirstLast(str) {
-
-    // SCRIVI QUI IL TUO CODICE
-
+  let words = str.split(" ");
+  for (let i = 0; i < words.length; i++){
+    words[i] = words[i].charAt(words[i].length-1) + words[i].slice(1,words[i].length-1) + words[i].charAt(0);
+  }
+  return words.join(" ");
 }
   
 // Acquisire l'input in base al tipo di input
@@ -23,7 +25,7 @@ if (process.argv.length > 2) {
     input: process.stdin,
     output: process.stdout
   });
-  rl.question('Inserisci la stringa da convertire in codice Morse: ', (inputStr) => {
+  rl.question('Inserisci la stringa da elaborare: ', (inputStr) => {
     let outputStr = swapFirstLast(inputStr);
     console.log(outputStr);
     rl.close();

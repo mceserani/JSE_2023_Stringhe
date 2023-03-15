@@ -18,8 +18,16 @@ function toMorseCode(str) {
       '9': '----.'
     };
 
-    // SCRIVI QUI IL TUO CODICE
-  
+    str = str.toLowerCase();
+    let m_str = "";
+    for (let i = 0; i < str.length; i++){
+      if (str[i] == " "){
+        m_str += " ";
+      }else{
+        m_str += morseCodes[str[i]];
+      }
+    }
+    return m_str;
 }
 
 // Acquisire l'input in base al tipo di input
